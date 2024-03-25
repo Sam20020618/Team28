@@ -12,6 +12,7 @@ namespace Liminal.Examples
     public class Examples : MonoBehaviour
     {
         public Transform Cube;
+        public Transform Player;
 
         private void Update()
         {
@@ -74,6 +75,11 @@ namespace Liminal.Examples
         public void ChangeCubeSize()
         {
             Cube.localScale = Vector3.one * Random.Range(0.1f, 0.35F);
+        }
+
+        public void ChangeCubePos()
+        {
+            Cube.transform.position = Player.position + new Vector3(0,1,1);
         }
     }
 }
