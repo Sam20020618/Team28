@@ -192,6 +192,11 @@ PrefabInstance:
       propertyPath: CustomFaderMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 0353b2341cd802849a12bd50f75ed44a, type: 2}
+    - target: {fileID: 1260162968766363322, guid: 22276a8657744e04cba8ad0a2caf4195,
+        type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22276a8657744e04cba8ad0a2caf4195, type: 3}
 --- !u!4 &141072768 stripped
@@ -283,6 +288,12 @@ Transform:
   m_Father: {fileID: 1676988090}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &516922462 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1260162968871696498, guid: 22276a8657744e04cba8ad0a2caf4195,
+    type: 3}
+  m_PrefabInstance: {fileID: 141072767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &612641625
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +398,7 @@ GameObject:
   - component: {fileID: 912598789}
   - component: {fileID: 912598788}
   - component: {fileID: 912598792}
+  - component: {fileID: 912598793}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -460,7 +472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912598787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 3.36}
+  m_LocalPosition: {x: 0.59, y: 1.6, z: 3.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -482,7 +494,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1805908235}
-        m_MethodName: ChangeCubeSize
+        m_MethodName: ChangeCubePos
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -491,9 +503,23 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: main
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &912598793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912598787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8664ac076da9aa040a810bdf1283ff70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cube: {fileID: 912598791}
+  Player: {fileID: 516922462}
 --- !u!1 &1676988087
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 912598791}
+  Player: {fileID: 141072768}
 --- !u!4 &1805908236
 Transform:
   m_ObjectHideFlags: 0
