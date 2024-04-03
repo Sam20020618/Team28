@@ -13,17 +13,32 @@ public class FollowHand : MonoBehaviour
     public Transform Cube;
     public Transform Player;
     private bool Trigger;
+   private bool Clicktrigger;
+   public bool ClickTrigger 
+   {
+    get
+        {
+          return Clicktrigger;
+        }
+    set
+    {
+      Clicktrigger = value;
+    }
+   }
   
     public float speed = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
       Trigger = false;
+      Clicktrigger = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+      if(Clicktrigger)
+      {
        var step =  speed * Time.deltaTime;
        if(!Trigger)
        {
@@ -36,6 +51,7 @@ public class FollowHand : MonoBehaviour
           Trigger = true;
         }
     }
+  }
 
      
 }
