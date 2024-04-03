@@ -12,41 +12,30 @@ public class FollowHand : MonoBehaviour
 {
     public Transform Cube;
     public Transform Player;
-    private Vector3 LastPos;
-    public Rigidbody m_Rigidbody;
+    private bool Trigger;
+  
+    public float speed = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
-         Cube.transform.position = Player.position * 2 + new Vector3(0,0,2);
+      Trigger = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        StartCoroutine(ExampleCoroutine());
-      
-        // m_Rigidbody.AddForce(transform.up * 3);
-       
-    }
-
-      IEnumerator ExampleCoroutine()
-    {
-     
-         LastPos = Cube.position;
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(5);
-
-
-         if(LastPos.x < Player.position.x)
+       var step =  speed * Time.deltaTime;
+       if(!Trigger)
        {
-          Debug.Log("It changed");
-          m_Rigidbody.AddForce(Vector3.left  * 1);
-       } else {
-         m_Rigidbody.AddForce(Vector3.right  * 1);
+          transform.position = Vector3.MoveTowards(transform.position, Player.position, step);
        }
+     
 
-      
+       if (Vector3.Distance(transform.position, Player.position) < 2.0f)
+        {
+          Trigger = true;
+        }
     }
+
+     
 }
