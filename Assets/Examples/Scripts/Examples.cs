@@ -13,7 +13,7 @@ namespace Liminal.Examples
     {
         public Transform Cube;
         public Transform Player;
-        public FollowHand move;
+        public MoveStar move;
 
         private void Update()
         {

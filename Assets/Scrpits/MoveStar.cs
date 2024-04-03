@@ -8,7 +8,7 @@ using Liminal.SDK.VR;
 using Liminal.SDK.VR.Avatars;
 using Liminal.SDK.VR.Input;
 
-public class FollowHand : MonoBehaviour
+public class MoveStar : MonoBehaviour
 {
     public Transform Cube;
     public Transform Player;
