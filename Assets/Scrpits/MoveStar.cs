@@ -12,7 +12,7 @@ public class MoveStar : MonoBehaviour
 {
     public Transform Cube;
     public float Timelock;
-    private float Timeset = 0.5f;
+    private float Timeset = 0.2f;
     public Transform Player;
     private Vector3 Lastpos;
     private bool Trigger;
