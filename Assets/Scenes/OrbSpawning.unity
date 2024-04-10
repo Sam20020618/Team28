@@ -683,11 +683,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777829723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573e7130e7d09314a82839b88f605193, type: 3}
+  m_Script: {fileID: 11500000, guid: 980499f957e0a2443a5cfee9e2e8eb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatSpeed: 1
+  floatSpeed: 0.75
   floatHeight: 1
+  arcRadius: 1
+  arcSpeed: 1
 --- !u!54 &1777829725
 Rigidbody:
   m_ObjectHideFlags: 0

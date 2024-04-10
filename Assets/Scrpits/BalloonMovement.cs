@@ -8,6 +8,9 @@ public class BalloonMovement : MonoBehaviour
     [SerializeField] private float floatSpeed;
     [SerializeField] private float floatHeight;
 
+    [SerializeField] private float arcRadius;
+    [SerializeField] private float arcSpeed;
+
     private Vector3 startPos;
 
     void Start()
@@ -18,8 +21,11 @@ public class BalloonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed) * floatHeight;
+        float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed * Mathf.PI) * (floatHeight / 2);
 
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+
+        float newX = startPos.x + Mathf.Cos(Time.time * arcSpeed) * arcRadius;
+
+        transform.position = new Vector3(newX, newY, transform.position.z);
     }
 }
