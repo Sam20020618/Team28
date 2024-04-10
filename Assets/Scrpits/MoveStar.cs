@@ -12,7 +12,7 @@ public class MoveStar : MonoBehaviour
 {
     public Transform Cube;
     public float Timelock;
-    private float Timeset = 1.0f;
+    private float Timeset = 0.5f;
     public Transform Player;
     private Vector3 Lastpos;
     private bool Trigger;
@@ -28,6 +28,7 @@ public class MoveStar : MonoBehaviour
       Clicktrigger = value;
     }
    }
+    public Rigidbody rb;
   
     public float speed = 0.0f;
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class MoveStar : MonoBehaviour
       Trigger = false;
       Clicktrigger = false;
       Timelock = Timeset;
+      rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -70,19 +72,18 @@ public class MoveStar : MonoBehaviour
        if(Lastpos.x < Player.position.x)
        {
          Debug.Log("Go left");
-         transform.Translate(Vector3.left * Time.deltaTime);
+          rb.AddForce(-0.1f, 0.0f, 0.0f);
        } else 
        {
-         transform.Translate(Vector3.right * Time.deltaTime);
+          rb.AddForce(0.1f, 0.0f, 0.0f);
        }
-      //   if(Lastpos.y < Player.position.y)
-      //  {
-      //    Debug.Log("Go left");
-      //    transform.Translate(Vector3.up * Time.deltaTime);
-      //  } else 
-      //  {
-      //    transform.Translate(Vector3.down * Time.deltaTime);
-      //  }
+        if(Lastpos.y < Player.position.y)
+       {
+        rb.AddForce(0.0f, 0.1f, 0.0f);
+       } else 
+       {
+          rb.AddForce(0.0f, -0.1f, 0.0f);
+       }
     }
   }
 
