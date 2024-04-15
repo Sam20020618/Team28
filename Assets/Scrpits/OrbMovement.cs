@@ -13,13 +13,15 @@ public class OrbMovement : MonoBehaviour
 
     enum OrbState
     {
-        idle, moving
+        spawn, idle, moving
     };
     
     [SerializeField] private OrbState orbState;
 
     private float yOffset;
     private Vector3 newPosition;
+
+    
 
     void Start()
     {
@@ -31,6 +33,18 @@ public class OrbMovement : MonoBehaviour
     {
         switch(orbState)
         {
+            case OrbState.spawn:
+                
+                if(transform.position.y < yOffset)
+                {
+                    transform.Translate(Vector3.up * speed/2 * Time.deltaTime);
+                } else 
+                {
+                    orbState = OrbState.moving;
+                }
+
+                break;
+
             case OrbState.idle:
                 yOffset = Mathf.Sin(Time.time * bobSpeed) * bobAmount;
                 newPosition = transform.position;
@@ -62,5 +76,11 @@ public class OrbMovement : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void SpawnMovement(float moveOffset)
+    {
+        yOffset = moveOffset;
+        orbState = OrbState.spawn;
     }
 }
