@@ -28,6 +28,54 @@ public class MoveStar : MonoBehaviour
       Clicktrigger = value;
     }
    }
+   private bool Left;
+   public bool left 
+   {
+    get
+        {
+          return Left;
+        }
+    set
+    {
+      Left = value;
+    }
+   }
+   private bool Right;
+   public bool right 
+   {
+    get
+        {
+          return Right;
+        }
+    set
+    {
+      Right = value;
+    }
+   }
+   private bool Up;
+   public bool up 
+   {
+    get
+        {
+          return Up;
+        }
+    set
+    {
+      Up = value;
+    }
+   }
+   private bool Down;
+   public bool down 
+   {
+    get
+        {
+          return Down;
+        }
+    set
+    {
+      Down = value;
+    }
+   }
     public Rigidbody rb;
   
     public float speed = 0.0f;
@@ -37,6 +85,10 @@ public class MoveStar : MonoBehaviour
       Trigger = false;
       Clicktrigger = false;
       Timelock = Timeset;
+      Left = false;
+      Right = false;
+      Up = false;
+      Down = false;
       rb = GetComponent<Rigidbody>();
     }
 
@@ -85,25 +137,27 @@ public class MoveStar : MonoBehaviour
     //   //  {
     //   //     rb.AddForce(0.0f, -0.1f, 0.0f);
     //   //  }
-           if(position == 1)
+           if(Left)
                {
                  Debug.Log("Go left");
-                 rb.AddForce(0.1f, 0.0f, 0.0f);
+                 rb.AddForce(-10.0f, 0.0f, 0.0f);
+                 Left = false;
                }
-               if(position == 2)
+                if(Right)
                {
-                 Debug.Log("Go left");
-                 rb.AddForce(-0.1f, 0.0f, 0.0f);
+                 rb.AddForce(10.0f, 0.0f, 0.0f);
+                 Right = false;
                }
-               if(position == 3)
+                if(Up)
                {
-                 Debug.Log("Go left");
-                 rb.AddForce(0.0f, 0.1f, 0.0f);
+                 rb.AddForce(0.0f, 10.0f, 0.0f);
+                 Up = false;
                }
-               if(position == 4)
+                if(Down)
                {
                  Debug.Log("Go left");
-                 rb.AddForce(0.0f, -0.1f, 0.0f);
+                 rb.AddForce(0.0f, -10.0f, 0.0f);
+                 Down = false;
                }
      }
   }

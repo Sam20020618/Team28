@@ -15,7 +15,6 @@ namespace Liminal.Examples
         public Transform Player;
         public MoveStar move;
         private bool hit = false;
-            public Rigidbody rb;
 
         private void Update()
         {
@@ -92,29 +91,26 @@ namespace Liminal.Examples
 
          public void RandomMove()
         {
-              rb = GetComponent<Rigidbody>();
             if(hit)
             {
-                var position = Random.Range(1.0f, 4.0f);
-               if(position == 1)
+                var position = Random.Range(0.0f, 4.0f);
+                Debug.Log("The postion is" + position);
+               if(position <= 1)
                {
-                 Debug.Log("Go left");
-                 rb.AddForce(0.1f, 0.0f, 0.0f);
+                Debug.Log("Left click worked");
+                 move.left = true;
                }
-               if(position == 2)
+               if(position <= 2 && position > 1)
                {
-                 Debug.Log("Go left");
-                 rb.AddForce(-0.1f, 0.0f, 0.0f);
+                 move.right = true;
                }
-               if(position == 3)
+               if(position <= 3 && position > 2)
                {
-                 Debug.Log("Go left");
-                 rb.AddForce(0.0f, 0.1f, 0.0f);
+                 move.up = true;
                }
-               if(position == 4)
+               if(position <= 4 && position > 3)
                {
-                 Debug.Log("Go left");
-                 rb.AddForce(0.0f, -0.1f, 0.0f);
+                 move.down = true;
                }
             }
         }
