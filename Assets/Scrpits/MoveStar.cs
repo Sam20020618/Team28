@@ -12,7 +12,7 @@ public class MoveStar : MonoBehaviour
 {
     public Transform Cube;
     public float Timelock;
-    private float Timeset = 0.2f;
+    private float Timeset = 0.5f;
     public Transform Player;
     private Vector3 Lastpos;
     private bool Trigger;
@@ -57,34 +57,55 @@ public class MoveStar : MonoBehaviour
           Trigger = true;
         }
     }
-    if(Trigger)
-    {
-      if(Timelock <= 0)
-      {
-         Lastpos = Player.position;
-         Timelock = Timeset;
-      }
-       else {
-          Timelock -= Time.deltaTime;
-       }
-       Debug.Log(Lastpos);
-        Debug.Log(Player.position);
-       if(Lastpos.x < Player.position.x)
-       {
-         Debug.Log("Go left");
-          rb.AddForce(-0.1f, 0.0f, 0.0f);
-       } else 
-       {
-          rb.AddForce(0.1f, 0.0f, 0.0f);
-       }
-        if(Lastpos.y < Player.position.y)
-       {
-        rb.AddForce(0.0f, 0.1f, 0.0f);
-       } else 
-       {
-          rb.AddForce(0.0f, -0.1f, 0.0f);
-       }
-    }
+     if(Trigger)
+     {
+    //   if(Timelock <= 0)
+    //   {
+    //      Lastpos = Player.position;
+    //      Timelock = Timeset;
+    //   }
+    //    else {
+    //       Timelock -= Time.deltaTime;
+    //    }
+    //    Debug.Log(Lastpos);
+    //     Debug.Log(Player.position);
+    //    if(Lastpos.x < Player.position.x)
+    //    {
+    //      Debug.Log("Go left");
+    //       rb.AddForce(0.1f, 0.0f, 0.0f);
+    //    } else 
+    //    {
+    //       rb.AddForce(-0.1f, 0.0f, 0.0f);
+    //         Debug.Log("Go Right");
+    //    }
+    //   //   if(Lastpos.y < Player.position.y)
+    //   //  {
+    //   //   rb.AddForce(0.0f, 0.1f, 0.0f);
+    //   //  } else 
+    //   //  {
+    //   //     rb.AddForce(0.0f, -0.1f, 0.0f);
+    //   //  }
+           if(position == 1)
+               {
+                 Debug.Log("Go left");
+                 rb.AddForce(0.1f, 0.0f, 0.0f);
+               }
+               if(position == 2)
+               {
+                 Debug.Log("Go left");
+                 rb.AddForce(-0.1f, 0.0f, 0.0f);
+               }
+               if(position == 3)
+               {
+                 Debug.Log("Go left");
+                 rb.AddForce(0.0f, 0.1f, 0.0f);
+               }
+               if(position == 4)
+               {
+                 Debug.Log("Go left");
+                 rb.AddForce(0.0f, -0.1f, 0.0f);
+               }
+     }
   }
 
      

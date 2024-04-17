@@ -14,6 +14,8 @@ namespace Liminal.Examples
         public Transform Cube;
         public Transform Player;
         public MoveStar move;
+        private bool hit = false;
+            public Rigidbody rb;
 
         private void Update()
         {
@@ -85,6 +87,36 @@ namespace Liminal.Examples
          public void ClickHappened()
         {
             move.ClickTrigger = true;
+            hit = true;
         }
-    }
+
+         public void RandomMove()
+        {
+              rb = GetComponent<Rigidbody>();
+            if(hit)
+            {
+                var position = Random.Range(1.0f, 4.0f);
+               if(position == 1)
+               {
+                 Debug.Log("Go left");
+                 rb.AddForce(0.1f, 0.0f, 0.0f);
+               }
+               if(position == 2)
+               {
+                 Debug.Log("Go left");
+                 rb.AddForce(-0.1f, 0.0f, 0.0f);
+               }
+               if(position == 3)
+               {
+                 Debug.Log("Go left");
+                 rb.AddForce(0.0f, 0.1f, 0.0f);
+               }
+               if(position == 4)
+               {
+                 Debug.Log("Go left");
+                 rb.AddForce(0.0f, -0.1f, 0.0f);
+               }
+            }
+        }
+  }
 }
