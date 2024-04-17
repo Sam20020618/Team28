@@ -32,3 +32,50 @@ The following packages were added:
 The following packages were updated:
   com.unity.textmeshpro from version 2.0.1 to 3.0.6
   com.unity.timeline from version 1.0.0 to 1.6.2
+
+=== Thu Apr 11 12:06:25 2024
+
+Packages were changed.
+Update Mode: resetToDefaultDependencies
+
+The following packages were updated:
+  com.unity.textmeshpro from version 3.0.6 to 2.0.1
+  com.unity.collab-proxy from version 1.13.5 to 1.2.16
+  com.unity.timeline from version 1.6.2 to 1.0.0
+The following packages were removed:
+  com.liminal.sdk@https://github.com/LiminalVR/Liminal-SDK-Unity-Package.git#develop
+  com.unity.ide.rider@3.0.7
+  com.unity.ide.visualstudio@2.0.11
+  com.unity.ide.vscode@1.2.4
+  com.unity.render-pipelines.high-definition@12.1.0
+  com.unity.render-pipelines.universal@12.1.0
+  com.unity.shadergraph@12.1.0
+  com.unity.terrain-tools@1.1.4-preview
+  com.unity.test-framework@1.1.29
+  com.unity.ugui@1.0.0
+  com.unity.visualscripting@1.7.2
+  com.unity.xr.oculus.android@1.38.4
+  com.unity.xr.oculus.standalone@1.38.4
+  com.unity.xr.openvr.standalone@1.0.5
+  com.unity.modules.androidjni@1.0.0
+
+=== Tue Apr 16 21:24:37 2024
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.ide.rider@3.0.7
+  com.unity.ide.visualstudio@2.0.11
+  com.unity.ide.vscode@1.2.4
+  com.unity.render-pipelines.high-definition@12.1.0
+  com.unity.render-pipelines.universal@12.1.0
+  com.unity.shadergraph@12.1.0
+  com.unity.test-framework@1.1.29
+  com.unity.ugui@1.0.0
+  com.unity.visualscripting@1.7.2
+  com.unity.modules.androidjni@1.0.0
+The following packages were updated:
+  com.unity.collab-proxy from version 1.2.16 to 1.13.5
+  com.unity.textmeshpro from version 2.0.1 to 3.0.6
+  com.unity.timeline from version 1.0.0 to 1.6.2
