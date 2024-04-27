@@ -10,10 +10,11 @@ public class OrbMovement : MonoBehaviour
 
     [SerializeField] private float bobSpeed;
     [SerializeField] private float bobAmount;
+    private bool handTouch = false;
 
     enum OrbState
     {
-        spawn, idle, moving
+        spawn, idle, moving, up
     };
     
     [SerializeField] private OrbState orbState;
@@ -31,6 +32,7 @@ public class OrbMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         switch(orbState)
         {
             case OrbState.spawn:
@@ -69,11 +71,19 @@ public class OrbMovement : MonoBehaviour
                     transform.position = newPosition;
                     //transform.position += transform.forward * speed * Time.deltaTime;
                 }
+                if(handTouch)
+                {
+                    orbState = OrbState.up;
+                }
 
                 if(distance <= minDist)
                 {
                     orbState = OrbState.idle;
                 }
+                break;
+
+            case OrbState.up:
+                transform.Translate(Vector3.up * Time.deltaTime, Space.World);
                 break;
         }
     }
@@ -82,5 +92,14 @@ public class OrbMovement : MonoBehaviour
     {
         yOffset = moveOffset;
         orbState = OrbState.spawn;
+    }
+
+   void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("trigger happen");
+         if (other.CompareTag("Hand"))
+        {
+           handTouch = true;
+        }
     }
 }
