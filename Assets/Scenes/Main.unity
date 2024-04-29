@@ -697,8 +697,6 @@ GameObject:
   - component: {fileID: 912598790}
   - component: {fileID: 912598789}
   - component: {fileID: 912598788}
-  - component: {fileID: 912598792}
-  - component: {fileID: 912598793}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -779,62 +777,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &912598792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912598787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e372bfb2af20443bb55afdd1a8fffc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1805908235}
-        m_MethodName: RandomMove
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1805908235}
-        m_MethodName: ClickHappened
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &912598793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912598787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8664ac076da9aa040a810bdf1283ff70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cube: {fileID: 912598791}
-  Timelock: 0
-  Player: {fileID: 0}
-  rb: {fileID: 0}
-  speed: 2
 --- !u!1 &1002560132
 GameObject:
   m_ObjectHideFlags: 0
@@ -5953,7 +5895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cube: {fileID: 912598791}
   Player: {fileID: 141072768}
-  move: {fileID: 912598793}
+  move: {fileID: 0}
 --- !u!4 &1805908236
 Transform:
   m_ObjectHideFlags: 0
